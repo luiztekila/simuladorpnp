@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Estudio por temas </title>
+	<link rel="stylesheet" type="text/css" href="estilotema.css">
+	
+</head>
+	<h1 style="text-align:left;"> "TEMA 1:CONSTITUCION 	POLITICA" </h1>
+			
+	<body>
+		<h3 for="pregunta">Pregunta:</h3>
+	<div class="pregunta">
+		<textarea name="textarea1" rows="4" cols="100"></textarea>
+		<img src="sig.bmp"  width="120" height="68" onclick="siguiente()">
+		</br>
+		<img src="atras.png" width="120" height="50">
+		</div>	
+			
+	</div>
+<h3 >Alternativas:</h3>
+	<div class="alternativas">
+		
+		<form class="columna1" name="alternativas">	
+			<label for="usuario">A:</label>	
+			<textarea name="textarea2" rows="4" cols="80"></textarea>
+			<input type="radio" name="opcion" value="A" onclick="responder()">
+			<img id="imagen" width="80" height="50">	
+			</br>	
+			<label for="usuario">B:</label>		
+			<textarea name="textarea3" rows="4" cols="80"></textarea>
+			<input type="radio" name="opcion" value="B" onclick="responder()">
+			<img id="imagen" width="80" height="50">
+			</br>	
+			<label for="usuario">C:</label>		
+			<textarea name="textarea4" rows="4" cols="80"></textarea>
+			<input type="radio" name="opcion" value="C" onclick="responder()">
+			<img id="imagen" width="80" height="50">	
+			</br>
+			<label for="usuario">D:</label>		
+			<textarea name="textarea5" rows="4" cols="80"></textarea>
+			<input type="radio" name="opcion" value="D" onclick="responder()">
+			<img id="imagen" width="80" height="50">
+			</br>
+			<label for="usuario">E:</label>	
+			<textarea name="textarea6" rows="4" cols="80"></textarea>
+			<input type="radio" name="opcion" value="E" onclick="responder()">
+			<img id="imagen" width="80" height="50">
+	
+ 		</form>
+ 		<div class="columna2">
+ 			<h2>Buenas:</h2>
+ 			<h2 id="etiq_buenas"></h2>
+ 			<h2 >Malas :</h2>
+ 			<h2 id="etiq_malas"></h2>
+ 		</div>
+	</div>
+
+	<div class="respuesta">
+		<label for="respuesta">Respuesta:</label>
+		<label id="respuesta" value="">A</label>	</br>
+		<textarea name="textarea7" rows="4" cols="120"></textarea></br>
+	</div>
+
+		<script>
+			
+			var resp="C"
+		
+			var responder = function () {
+				var controles=document.getElementsByName("alternativas")[0];
+				var imagen=document.getElementById("imagen");
+				var valor=document.querySelector('input[name=opcion]:checked').value;//encuetra el valor de radio button seleccionado
+				if (valor=="A") {
+					indice=0;}
+				else if (valor=="B") {
+					indice=1;}
+				else if (valor=="C") {
+					indice=2;}
+				else if (valor=="D") {
+				indice=3;}
+				else if (valor=="E") {
+					indice=4;}
+				//if(controles.opcion[0].value=="A") { ---PARA USAR VAR CONTROLES --
+				if(valor==resp) {
+				document.alternativas.imagen[indice].src="buena.jpg"
+				etiq_buenas.innerHTML="5";
+				}else {
+				document.alternativas.imagen[indice].src="mala.jpg"
+				}
+			};
+			
+		</script>
+		<script type="">
+		var siguiente=function(){
+				var controles=document.getElementsByName("alternativas")[0];
+				var imagen=document.getElementById("imagen");
+				var i;
+				for (i=0;i<=4;i++){
+				controles.opcion[i].checked=false;
+				document.alternativas.imagen[i].src="";}
+				};
+
+			</script>
+	</body>
+
+
+</html>
