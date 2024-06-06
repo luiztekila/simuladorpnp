@@ -1,48 +1,81 @@
 <!doctype html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title> Simulador </title>
-	<link rel="stylesheet" type="text/css" href="estilos_simulador.css" />
-</head>
-	<body>
-	<h1 style="text-align:center"> Simulador de Ascenso 2022 </h1>
-		<nav class="navegacion">
-		<ul class="menu">
-			<li><a href="#">Temas 1 al 5</a>
-				<ul class="submenu">
-					<li><a href="tema1.html">1.Derechos Humanos</a></li>
-					<li><a href="tema2.html">2.Constitución Política</a></li>
-					<li><a href="tema3.html">3.Ley de la PNP </a></li>
-					<li><a href="tema4.html">4.Régimen Disciplinario PNP</a></li>
-					<li><a href="tema5.html">5.Constitución Política</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Temas del 6 al 10</a>
-				<ul class="submenu">
-					<li><a href="tema6.html">6.Ley de</a></li>
-					<li><a href="tema7.html">7.Ley de </a></li>
-					<li><a href="tema8.html">8.Ley de la PNP </a></li>
-					<li><a href="tema9.html">9.LeyP</a></li>
-					<li><a href="tema10.html">10.Ley</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Temas del 11 al 16</a>
-				<ul class="submenu">
-					<li><a href="tema11.html">11.</a></li>
-					<li><a href="tema12.html">12.</a></li>
-					<li><a href="tema13.html">13. </a></li>
-					<li><a href="tema14.html">14.</a></li>
-					<li><a href="tema15.html">15.</a></li>
-					<li><a href="tema16.html">16.</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Acerca de ...</a></li>
-	</nav>
-	<div class="cuerpo">
-		<a href="#">Preparece para ascender a su nuevo grado</a>
-	</div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet"  href="css/bootstrap.css" />
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+      
+      <nav class="navbar navbar-expand-lg" style= "background-color: #7eb9e4;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Contacto LVV </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ayuda</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              Simulador de Exámen de Ascenso 2024
+            </span>
+          </div>
+        </div>
+      </nav>
+      
+    </div>
+    <br>
+    <center>
+       <h3 >Simulador para el Exámen de Ascenso PNP 2024</h3>
+      </center>
 
-	
-</body>
+   <div class="container-fluid" style= "background-color: #c2d8e7;">
+
+      <div class="container mt-5">
+          
+          <div class="row">
+                <div class="col-6 col-md-3 col-lg-2"> 
+                  <br>
+                  <button type="button" class="btn btn-success" onclick="location.href='tema1.html'">Constitución Política</button><br><br>
+                  <button type="button" class="btn btn-success">Constitución Política</button><br><br>
+                  <button type="button" class="btn btn-success">Constitución Política</button><br>
+                 </div>            
+                <div class="col-6  col-md-3 col-lg-2"> <br> 
+                  <button type="button" class="btn btn-success">Reglamento de la Ley N</button><br><br>
+                  <button type="button" class="btn btn-success">Reglamento de la Ley N</button><br><br>
+                  <button type="button" class="btn btn-success">Reglamento de la Ley N</button>
+                </div>
+                <div class="col-6  col-md-3 col-lg-2">  <br>
+                 <button type="button" class="btn btn-success">Success</button><br><br>  
+                 <button type="button" class="btn btn-success">Success</button><br><br>
+                 <button type="button" class="btn btn-success">Success</button><br><br>
+                </div>
+                  <div class="col-6  col-md-3 col-lg-2">  <br>
+                  <button type="button" class="btn btn-success">Success</button><br><br>  
+                  <button type="button" class="btn btn-success">Success</button><br><br>
+                  <button type="button" class="btn btn-success">Success</button><br><br>
+                 </div>
+                 <br><br>
+                <div class="col-8 col-md-3 col-lg-4">  
+                  <br>
+                  <center>
+                  <button type="button" class="btn" style= "background-color: #da7a42;" >Simular Examen</button><br><br> 
+                  <br> Generar un exámen aleatorio de 100 preguntas 
+                </center>
+                 
+                </div>
+                              
+          </div>
+    </div>
+    
+  </body>
 </html>
