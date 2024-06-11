@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link rel="stylesheet"  href="css/bootstrap.css" />
+    <script src="index.js">
+     //llamando funciones 
+     </script>
   </head>
-  <body>
+  <body onload="contarLineas(); copiarLinea() ">
     
     <div class="container-fluid">
       
@@ -37,18 +40,17 @@
        <h3 >Tema N° 1 </h3>
       </center>
 
-   <div class="container-fluid mt-2 " style= "background-color: #c2d8e7;">
+   <div class="container-fluid mt-2 " >
 
       <div class="row">
             <div class="col-2"> 
-                <img src="img/atras.jpg">  
+                <img src="img/atras.jpg" onclick="atras()" >  
                 </div>
-            <div class="col-8  px-0" style= "background-color: #c2d8e7; "  > 
-             <p id="parra1" style="line-height:1.1;" >  te amo susan toxica mi amor te amo susan toxica mi amor  
-               te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor  </p>
+            <div class="col-8  px-0" style= "background-color: hsl(140, 55%, 85%); "  > 
+             <p id="parra1" style="line-height:1.1;" ></p>
             </div>
             <div class="col-1"> 
-              <img src="img/adelante.jpg">
+              <img src="img/sig.jpg" onclick="siguiente()">
             </div>
       </div>
     </div>
@@ -56,10 +58,9 @@
      <div class="container-fluid mt-2" style= "background-color: #4689b6;">
           <div class="row">
                 <div class="col-1"></br>A. </div>              
-                <div class="col-8  px-0"> <p id="parra2" style="line-height:1.1;"> te amo susan toxica mi amor te amo susan toxica mi amor  
-               te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>        
+                <div class="col-8  px-0"> <p id="parra2" style="line-height:1.1;"></p></div>        
                 <div class="col-1"> </br>
-                  <input type="radio" name="opcion" value="A" onclick="responder()">
+                  <input type="radio" id="radio" name="opcion" value="A" onclick="responder()">
                 </div>   
                 <div class="col-1"> 
                   <img id="imagen"  >
@@ -73,7 +74,7 @@
                 <div class="col-8  px-0"><p id="parra3" style="line-height:1.1;">te amo susan toxica mi amor te amo susan toxica mi amor  
                te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>            
                 <div class="col-1"> </br>
-                  <input type="radio" name="opcion" value="A" onclick="responder()">
+                  <input type="radio" id="radio" name="opcion" value="A" onclick="responder()">
                 </div>   
                 <div class="col-1"> <img id="imagen" > </div> 
             </div>                                  
@@ -84,7 +85,7 @@
                 <div class="col-8  px-0"><p id="parra4" style="line-height:1.1;"> te amo susan toxica mi amor te amo susan toxica mi amor  
                te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>            
                 <div class="col-1"> </br>
-                  <input type="radio" name="opcion" value="A" onclick="responder()">
+                  <input type="radio" id="radio" name="opcion" value="A" onclick="responder()">
                 </div>   
                 <div class="col-1"> <img id="imagen"> </div> 
             </div>                                  
@@ -95,7 +96,7 @@
                 <div class="col-8  px-0"><p id="parra5" style="line-height:1.1;"> te amo susan toxica mi amor te amo susan toxica mi amor  
                te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>            
                 <div class="col-1"> </br>
-                  <input type="radio" name="opcion" value="A" onclick="responder()">
+                  <input type="radio" id="radio" name="opcion" value="A" onclick="responder()">
                 </div>   
                 <div class="col-1"> <img id="imagen"> </div> 
             </div>                                  
@@ -107,7 +108,7 @@
                 <div class="col-8  px-0"><p id="parra6" style="line-height:1.1;"> te amo susan toxica mi amor te amo susan toxica mi amor  
                te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>            
                 <div class="col-1"> </br>
-                  <input type="radio" name="opcion" value="E" onclick="responder()">
+                  <input type="radio" id="radio" name="opcion" value="E" onclick="responder()">
                 </div>   
                 <div class="col-1"> <img id="imagen"> </div> 
             </div>                                  
@@ -120,5 +121,62 @@
                te amo susan toxica mi amor te amo susan toxica mi amor te amo susan toxica mi amor</p></div>            
            </div>                                  
    </div>
-  </body>
+   <div>
+    <p id="buenas">Buenas:</p>  <p id="malas"> Malas:</p>
+   </div>
+   <div>
+    <p id="respuesta"></p>
+    <textarea id="txtArea" cols="50" hidden="none">
+1. TODA PERSONA TIENE DERECHO: A ELEGIR SU LUGAR DE RESIDENCIA, A TRANSITAR POR EL TERRITORIO NACIONAL Y A SALIR DE ÉL Y ENTRAR EN ÉL, SALVO LIMITACIONES POR:.
+RAZONES DE SEGURIDAD PREVIA RESOLUCIÓN FISCAL Y EN APLICACIÓN DE LA LEY DE EXTRANJERÍA.
+CAUSAS DE SALUD PÚBLICA O POR MANDATO JUDICIAL O POR APLICACIÓN DE LA LEY DE MIGRACIONES.
+RAZONES DE SANIDAD O POR MANDATO JUDICIAL O POR APLICACIÓN DE LA LEY DE EXTRANJERÍA.
+CAUSAS DE SALUBRIDAD, MANDATO ADMINISTRATIVO O POR APLICACIÓN DE LA LEY DE EXTRANJERÍA.
+RAZONES DE SANIDAD O POR MANDATO JUDICIAL A PEDIDO DE LA SEGURIDAD PRIVADA AEROPUERTARIA.
+RAZONES DE SANIDAD O POR MANDATO JUDICIAL O POR APLICACIÓN DE LA LEY DE EXTRANJERÍA.
+UBICACIÓN: TÍTULO I, DE LA PERSONA Y DE LA SOCIEDAD, CAPÍTULO I, DERECHOS FUNDAMENTALES DE LA PERSONA, ART. 2°, NUMERAL 11
+CÓDIGO:	169654
+.
+2.	SE RECONOCEN LOS DERECHOS DE SINDICACIÓN Y HUELGA DE LOS SERVIDORES PÚBLICOS. NO ESTÁN COMPRENDIDOS:.
+TODOS LOS FUNCIONARIOS DEL ESTADO.
+LOS MIEMBROS DE LA SUNAT NI DEL INSTITUTO NACIONAL PENITENCIARIO.
+LOS QUE DESEMPEÑAN CARGOS DE CARRERA EN LA ADMINISTRACIÓN PÚBLICA.
+LOS MIEMBROS DE LAS FUERZAS ARMADAS Y DE LA POLICÍA NACIONAL.
+LOS MIEMBROS DE LAS FUERZAS ARMADAS Y DE LA POLICÍA NACIONAL EN ACTIVIDAD Y RETIRO.
+LOS MIEMBROS DE LAS FUERZAS ARMADAS Y DE LA POLICÍA NACIONAL.
+UBICACIÓN:	TITULO I, CAP. IV, ART. 42°
+CÓDIGO:	169655
+.
+3.	TODA PERSONA TIENE DERECHO AL HONOR Y A LA:.
+INTIMIDAD PERSONAL Y FAMILIAR.
+DESHONRA.
+VIDA EN RIQUEZA.
+INTIMIDAD.
+INTIMIDAD RELIGIOSA.
+INTIMIDAD PERSONAL Y FAMILIAR.
+UBICACIÓN:	TÍTULO I, DE LA PERSONA Y DE LA SOCIEDAD, CAP. I, DERECHOS FUNDAMENTALES DE LA PERSONA, ART. 2º, NUMERAL 7 
+CÓDIGO:	169656
+.
+4.	TIENE LA MÁS ALTA JERARQUÍA EN EL SERVICIO A LA NACION.
+JUECES SUPERIORES
+EL PRESIDENTE DEL TRIBUNAL CONSTITUCIONAL.
+EL FISCAL DE LA NACIÓN.
+EL PRESIDENTE DEL CONSEJO DE MINISTROS.
+PRESIDENTE DE LA REPÚBLICA.
+PRESIDENTE DE LA REPÚBLICA.
+UBICACIÓN:	ART. 39°
+CÓDIGO:	169657
+.
+5.	ESTA CONSIDERADO EN LA FINALIDAD FUNDAMENTAL DE LA POLICÍA NACIONAL LO SIGUIENTE:.
+GARANTIZAR, MANTENER Y RESTABLECER EL ORDEN INTERNO Y PÚBLICO.
+GARANTIZAR, MANTENER Y ESTABLECER EL ORDEN INTERNO.
+GARANTIZAR, MANTENER Y RESTABLECER EL ORDEN PÚBLICO.
+GARANTIZAR, MANTENER Y RESTABLECER EL ORDEN INTERNO.
+GARANTIZAR Y RESTABLECER EL ORDEN INTERNO.
+GARANTIZAR, MANTENER Y RESTABLECER EL ORDEN INTERNO.
+UBICACIÓN: TÍTULO IV DE LA ESTRUCTURA DEL ESTADO, CAPÍTULO XII DE LA SEGURIDAD Y DE LA DEFENSA NACIONAL, ART. 166°
+CÓDIGO
+.
+ </textarea></div>
+ </body>
 </html>
