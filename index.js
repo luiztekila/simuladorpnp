@@ -16,11 +16,7 @@
         // Mostrar el número de líneas
         alert('El textarea tiene ' + lineasNoVacias.length + ' línea(s).');
     }
-    // llamado a la uncion contar lineas
-   
-
-
-    // llamado a la uncion copiar lineas
+    
     function siguiente() {
         pregunta= pregunta + 1;
         copiarLinea();
@@ -58,5 +54,47 @@
         else if (linea5 == linea7) {respuesta="D";}
          else  respuesta="E";
          document.getElementById('respuesta').textContent = respuesta;
+         var radios = document.getElementsByName('opcion');
+         for (var i = 0; i < radios.length; i++) {
+             radios[i].checked = false;
+         }
+         document.getElementById('imagen1').src="";
+         document.getElementById('imagen2').src="";
+         document.getElementById('imagen3').src="";
+         document.getElementById('imagen4').src="";
+         document.getElementById('imagen5').src="";
 
     }
+
+		var responder = function (opcion) {
+
+            var imag1 = document.getElementById('imagen1');
+			var imag2 = document.getElementById('imagen2');
+			var imag3 = document.getElementById('imagen3');
+			var imag4 = document.getElementById('imagen4');
+			var imag5 = document.getElementById('imagen5');
+            var valor=document.querySelector('input[name=opcion]:checked').value;//encuetra el valor de radio button seleccionado
+				 document.getElementById('seleccion').textContent = valor;
+
+             switch (valor) {
+                case "A":
+                   if (respuesta=="A") { imag1.src='img/bien.jpg';} else imag1.src='img/mal.jpg';
+                   break;
+                case "B":
+                   	if (respuesta=="B") { imag2.src='img/bien.jpg';} else imag2.src='img/mal.jpg';
+                    break;
+                case "C":
+                    if (respuesta=="C") { imag3.src='img/bien.jpg';} else imag3.src='img/mal.jpg';
+                    break;
+				case "D":
+                    if (respuesta=="D") { imag4.src='img/bien.jpg';} else imag4.src='img/mal.jpg'; 
+                    break;
+				case "E":
+                    if (respuesta=="E") { imag5.src='img/bien.jpg';} else imag5.src='img/mal.jpg';
+                    break;
+               default:
+					
+            }
+	
+				
+		}
