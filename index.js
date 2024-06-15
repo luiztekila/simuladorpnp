@@ -1,8 +1,12 @@
  var pregunta  = 1;
- var bandera = 0;
-  var ultima=50;
-  var respuesta="";
-
+ var bandera= "A";
+  var ultima = 50;
+  var respuesta = "";
+  var buena = 0;
+  var mala = 0;
+   
+   // bandera =
+   
     function contarLineas() {
         var textarea = document.getElementById('txtArea');
         var contenido = textarea.value;
@@ -11,20 +15,24 @@
         // Eliminar líneas vacías del conteo
         var lineasNoVacias = lineas.filter(function(linea) {
             return linea.trim() !== '';
-            ultima=lineasNoVacias.length;
+           // ultima=lineasNoVacias.length;
         });
         // Mostrar el número de líneas
-        alert('El textarea tiene ' + lineasNoVacias.length + ' línea(s).');
+        alert('El tema tiene ' + lineasNoVacias.length/10 + ' Preguntas.');
     }
     
     function siguiente() {
         pregunta= pregunta + 1;
+        if (pregunta >230) {alert('Terminó el tema de estudio');}
+        else {
         copiarLinea();
+        bandera="A";};
     }
 
     function atras() {
         pregunta= pregunta - 1;
         copiarLinea();
+        bandera="A";
     }
 
     function copiarLinea() {
@@ -52,7 +60,8 @@
         else if (linea3 == linea7) { respuesta="B";}
         else if (linea4 == linea7) {respuesta="C";}
         else if (linea5 == linea7) {respuesta="D";}
-         else  respuesta="E";
+        else if (linea6 == linea7) {respuesta="E";}
+         else  respuesta="Error";
          document.getElementById('respuesta').textContent = respuesta;
          var radios = document.getElementsByName('opcion');
          for (var i = 0; i < radios.length; i++) {
@@ -75,26 +84,39 @@
 			var imag5 = document.getElementById('imagen5');
             var valor=document.querySelector('input[name=opcion]:checked').value;//encuetra el valor de radio button seleccionado
 				 document.getElementById('seleccion').textContent = valor;
-
-             switch (valor) {
-                case "A":
-                   if (respuesta=="A") { imag1.src='img/bien.jpg';} else imag1.src='img/mal.jpg';
+             // para contar las buenas y malas   
+             //bandera=document.getElementById('verbandera');
+             
+                switch (valor) {
+                  case "A":
+                   if (respuesta=="A") { imag1.src='img/bien.jpg'; buenas();} else {imag1.src='img/mal.jpg'; malas();} 
+                  break;
+                 case "B":
+                   if (respuesta=="B") { imag2.src='img/bien.jpg'; buenas();} else {imag2.src='img/mal.jpg'; malas();}
                    break;
-                case "B":
-                   	if (respuesta=="B") { imag2.src='img/bien.jpg';} else imag2.src='img/mal.jpg';
-                    break;
-                case "C":
-                    if (respuesta=="C") { imag3.src='img/bien.jpg';} else imag3.src='img/mal.jpg';
-                    break;
-				case "D":
-                    if (respuesta=="D") { imag4.src='img/bien.jpg';} else imag4.src='img/mal.jpg'; 
-                    break;
-				case "E":
-                    if (respuesta=="E") { imag5.src='img/bien.jpg';} else imag5.src='img/mal.jpg';
-                    break;
-               default:
-					
-            }
-	
-				
-		}
+                 case "C":
+                     if (respuesta=="C") { imag3.src='img/bien.jpg'; buenas();} else {imag3.src='img/mal.jpg'; malas();}
+                   break;
+				 case "D":
+                     if (respuesta=="D") { imag4.src='img/bien.jpg'; buenas();} else {imag4.src='img/mal.jpg'; malas();}
+                   break;
+				 case "E":
+                    if (respuesta=="E") { imag5.src='img/bien.jpg'; buenas();} else {imag5.src='img/mal.jpg'; malas();}
+                   break;
+                 default:
+			   };
+         
+        }
+          var buenas = function() {
+              if (bandera=="A")     {
+               buena = buena + 1;
+               document.getElementById("verbuenas").innerHTML ="Buenas : "+ buena; 
+              bandera="B";};
+           }
+           var malas = function() {
+               if (bandera=="A")     {
+                mala = mala + 1;
+               document.getElementById("vermalas").innerHTML ="Malas : "+ mala;      
+               bandera="B"; };
+              }
+           
