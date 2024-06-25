@@ -1,6 +1,6 @@
  var pregunta  = 1;
  var bandera= "A";
-  var ultima = 50;
+var ultima = 0;
   var respuesta = "";
   var buena = 0;
   var mala = 0;
@@ -15,15 +15,18 @@
         // Eliminar líneas vacías del conteo
         var lineasNoVacias = lineas.filter(function(linea) {
             return linea.trim() !== '';
-           // ultima=lineasNoVacias.length;
-        });
+          });
         // Mostrar el número de líneas
+         
         alert('El tema tiene ' + lineasNoVacias.length/10 + ' Preguntas.');
+        ultima = (contenido.match(/\n/g) || []).length/10;
+          
+            console.log(ultima);
     }
-    
+     
     function siguiente() {
         pregunta= pregunta + 1;
-        if (pregunta >230) {alert('Terminó el tema de estudio');}
+        if (pregunta > ultima) {alert('Terminó el tema de estudio');}
         else {
         copiarLinea();
         bandera="A";};
@@ -83,7 +86,7 @@
 			var imag4 = document.getElementById('imagen4');
 			var imag5 = document.getElementById('imagen5');
             var valor=document.querySelector('input[name=opcion]:checked').value;//encuetra el valor de radio button seleccionado
-				 document.getElementById('seleccion').textContent = valor;
+				// document.getElementById('seleccion').textContent = valor;
              // para contar las buenas y malas   
              //bandera=document.getElementById('verbandera');
              
@@ -119,4 +122,7 @@
                document.getElementById("vermalas").innerHTML ="Malas : "+ mala;      
                bandera="B"; };
               }
-           
+        
+        window.onbeforeunload = function(e) {
+       return '¿ Quieres salir?';
+        };  
