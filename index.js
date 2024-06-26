@@ -126,3 +126,5 @@ var ultima = 0;
         window.onbeforeunload = function(e) {
        return '¿ Quieres salir?';
         };  
+
+        
