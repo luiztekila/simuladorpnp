@@ -85,4 +85,23 @@
     </div>
     
   </body>
+<script>
+  var tiempoDeInactividad = 1 * 60 * 1000; // 5 minutos en milisegundos
+
+  var tiempoInicio = new Date().getTime();
+
+  function verificarInactividad() {
+    var tiempoActual = new Date().getTime();
+    if (tiempoActual - tiempoInicio >= tiempoDeInactividad) {
+      window.close(); // Cierra la ventana actual
+    } else {
+      setTimeout(verificarInactividad, 1000); // Verifica la inactividad cada segundo
+    }
+  }
+
+  // Iniciar el control de inactividad al cargar la página
+  window.onload = function() {
+    setTimeout(verificarInactividad, 1000); // Iniciar la verificación de inactividad después de 1 segundo
+  };
+</script>
 </html>
